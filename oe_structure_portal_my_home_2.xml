@@ -1,0 +1,651 @@
+<data>
+    <xpath expr="//*[contains(@class, 'oe_structure')][@id='oe_structure_portal_my_home_2']" position="replace">
+        <div class="oe_structure" id="oe_structure_portal_my_home_2">
+          
+          <!-- Cabeçalho com Gradiente e Partículas -->
+          <header class="profile-header">
+    <!-- Partículas de fundo -->
+    <div id="particles-js" class="particles-container">
+        
+    <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="876" height="549"/></div>
+
+    <!-- Conteúdo Centralizado -->
+    <div class="container pt-4 pb-5 position-relative" style="z-index: 1;">
+        <div class="d-flex flex-column align-items-center mb-4 greeting-section">
+                    <!-- Definir usuário e URL da imagem -->
+                    <t t-set="user" t-value="request.env.user"/>
+                    <t t-set="user_image_url" t-value="'/web/image/res.users/' + str(user.id) + '/image_1920'"/>
+
+                    <!-- Imagem do Usuário -->
+                    <img t-att-src="user_image_url" alt="Imagem do perfil" class="img-fluid profile-image"/>
+
+                    <!-- Nome do Usuário -->
+                    <h5 class="user-name mt-3">Olá, <t t-esc="user.name"/></h5>
+                </div>
+                
+              <div class="separator"/>
+              <!-- Botões de Ação -->
+              <div class="action-buttons mt-4">
+                  <div class="button-group d-flex flex-wrap justify-content-center gap-2">
+                      
+                      <a href="/indicador" class="btn btn-primary btn-sm mx-2 mb-2" title="" data-bs-original-title="Indicadores">
+                          <strong><span style="font-size: 1.0625rem;">Indicadores</span></strong><span style="font-size: 1.0625rem;">
+                      </span></a>
+      
+                      
+                      <a href="/slides" class="mx-2 btn btn-primary btn-sm mb-2" title="" data-bs-original-title="Conquistas">
+                          <strong><span style="font-size: 1.0625rem;">Conquistas</span></strong>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </header>
+ 
+      <section class="quick-links-section o_colored_level pt56" style="background-color: rgb(250, 250, 250); background-image: none;">
+      <h6 style="font-size: 20px; margin-bottom: 40px;">Menu Rápido</h6> 
+      <div class="quick-links-container" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;">
+        
+        <a href="/profile/users" class="quick-link-card" title="" style="flex: 0 1 calc(50% - 10px); box-sizing: border-box;" data-bs-original-title="Ranking">
+          <div class="icon-wrapper">
+            <img src="https://www.svgrepo.com/show/475051/pedestal.svg" alt="Rank Docente Icon" class="svg-icon" loading="lazy"/>
+          </div>
+          Ranking
+        </a>
+    
+        <a href="/forum/" class="quick-link-card" title="" style="flex: 0 1 calc(50% - 10px); box-sizing: border-box;" data-bs-original-title="Fórum">
+          <div class="icon-wrapper">
+            <img src="https://www.svgrepo.com/show/263073/backpack-luggage.svg" alt="Forum Icon" class="svg-icon" loading="lazy"/>
+          </div>
+          Fórum
+        </a>
+    
+        <a href="https://unindustria.com.br/cursos/" class="quick-link-card" title="Notificações" style="flex: 0 1 calc(50% - 10px); box-sizing: border-box;">
+          <div class="icon-wrapper">
+            <img src="https://www.svgrepo.com/show/286291/building-city.svg" alt="Notificações Icon" class="svg-icon" loading="lazy"/>
+          </div>
+          Unindustria
+        </a>
+    
+        <a href="https://senaiweb01.senaibahia.com.br/areadocente/" class="quick-link-card" title="Calendário" style="flex: 0 1 calc(50% - 10px); box-sizing: border-box;">
+          <div class="icon-wrapper">
+            <img src="https://www.svgrepo.com/show/421439/future-portal-technology.svg" alt="Calendário Icon" class="svg-icon" loading="lazy"/>
+          </div>
+          Portal Docente
+        </a>
+    
+        <a href="/news" class="quick-link-card" title="Mensagens" style="flex: 0 1 calc(50% - 10px); box-sizing: border-box;">
+          <div class="icon-wrapper">
+            <img src="https://www.svgrepo.com/show/288152/newspaper-news.svg" alt="Mensagens Icon" class="svg-icon" loading="lazy"/>
+          </div>
+          Notícias
+        </a>
+    
+        <a href="profile/ranks_badges?url_origin=/profile/user/" class="quick-link-card" title="Documentos" style="flex: 0 1 calc(50% - 10px); box-sizing: border-box;">
+          <div class="icon-wrapper">
+            <img src="https://www.svgrepo.com/show/296414/medal-reward.svg" alt="Documentos Icon" class="svg-icon" loading="lazy"/>
+          </div>
+          Emblemas
+        </a>
+    
+        <a href="https://classroom.google.com/" class="quick-link-card" title="Configurações" style="flex: 0 1 calc(50% - 10px); box-sizing: border-box;">
+          <div class="icon-wrapper">
+            <img src="https://www.svgrepo.com/show/263054/school-material-pen.svg" alt="Configurações Icon" class="svg-icon" loading="lazy"/>
+          </div>
+          Sala de Aula
+        </a>
+    
+        <a href="https://www.portaldaindustria.com.br/senai/canais/grand-prix-de-inovacao/" class="quick-link-card" title="Suporte" style="flex: 0 1 calc(50% - 10px); box-sizing: border-box;">
+          <div class="icon-wrapper">
+            <img src="https://www.svgrepo.com/show/43187/race.svg" alt="Suporte Icon" class="svg-icon" loading="lazy"/>
+          </div>
+          GrandPrix
+        </a>
+      </div>
+    </section>
+           
+           <section class="s_title o_colored_level pb0 pt0" data-vcss="001" data-snippet="s_title" data-name="Título" style="background-color: rgba(239, 227, 215, 0.1);">
+        <div class="s_allow_columns container">
+           
+           
+            <p><span style="font-size: 1rem;"><strong><font class="text-900"><span style="font-size: 1.25rem;">&amp;nbsp;</span></font></strong></span></p>
+           
+        <h2 class="display-3-fs" style="text-align: center;"><span style="font-size: 0.875rem;"/><strong><span style="font-size: 1.25rem;">Fique por dentro</span><span style="font-size: 1.5rem;"><br/><br/></span></strong><span style="font-size: 0.875rem;"><strong>&amp;nbsp;</strong></span><br/></h2> 
+  <section class="s_image_gallery o_colored_level pb0 o_slideshow pt0" data-vcss="001" data-columns="3" style="overflow: hidden; background-image: none; position: relative; height: 325px;" data-snippet="s_image_gallery" data-name="Personalizar Galeria de imagens">
+        <div class="o_container_small"><div class="carousel slide" data-bs-ride="carousel" style="margin: 0 12px;" id="slideshow_1728786902494" data-bs-interval="4000"><div class="carousel-inner" style="padding: 0;"><div class="carousel-item"><img data-name="Image" class="img img-fluid d-block o_we_custom_image border rounded" src="/web/image/1144-7656f654/03ef458c-95a5-4407-9ec6-af3c15d90ba3.svg" style="min-height: 1px; border-width: 2px !important; border-color: rgb(206, 212, 218) !important; border-radius: 8px !important;" alt="" data-index="0" loading="lazy"/></div><div class="carousel-item undefined"><img data-name="Image" class="img img-fluid d-block o_we_custom_image border rounded" src="/web/image/1390-a797dd36/Rectangle2223.svg" style="min-height: 1px; border-width: 2px !important; border-color: rgb(206, 212, 218) !important; border-radius: 8px !important;" alt="" data-index="1" loading="lazy"/></div><div class="carousel-item undefined"><img data-name="Image" class="img img-fluid d-block o_we_custom_image border rounded" src="/web/image/1393-4a91e8d8/jovem-utilizando-celular-a40d9221.svg" style="min-height: 1px; border-width: 2px !important; border-color: rgb(206, 212, 218) !important; border-radius: 8px !important;" alt="" data-index="2" loading="lazy"/></div><div class="carousel-item undefined active"><img data-name="Image" class="img img-fluid d-block o_we_custom_image border rounded" src="/web/image/1424-c252108e/WhatsApp%2520Image%25202024-07-18%2520at%252016.svg" style="min-height: 1px; border-width: 2px !important; border-color: rgb(206, 212, 218) !important; border-radius: 8px !important;" alt="" data-index="3" loading="lazy"/></div></div><ul class="carousel-indicators"><li class="o_indicators_left text-center" aria-label="Previous" title="Anterior"><i class="oi oi-chevron-left"/></li><li data-bs-target="#slideshow_1728786902494" data-bs-slide-to="0" style="background-image: url(&quot;/web/image/1144-7656f654/03ef458c-95a5-4407-9ec6-af3c15d90ba3.svg&quot;);"/><li data-bs-target="#slideshow_1728786902494" data-bs-slide-to="1" style="background-image: url(/web/image/1390-a797dd36/Rectangle2223.svg)"/><li data-bs-target="#slideshow_1728786902494" data-bs-slide-to="2" style="background-image: url(/web/image/1393-4a91e8d8/jovem-utilizando-celular-a40d9221.svg)"/><li data-bs-target="#slideshow_1728786902494" data-bs-slide-to="3" style="background-image: url(/web/image/1424-c252108e/WhatsApp%2520Image%25202024-07-18%2520at%252016.svg)" class="active" aria-current="true"/><li class="o_indicators_right text-center" aria-label="Next" title="Próximo"><i class="oi oi-chevron-right"/></li></ul><a class="carousel-control-prev o_we_no_overlay o_not_editable" data-bs-slide="prev" aria-label="Previous" title="Anterior" href="#slideshow_1728786902494"><span class="oi oi-chevron-left fa-2x text-white"/><span class="visually-hidden">Anterior</span></a><a class="carousel-control-next o_we_no_overlay o_not_editable" data-bs-slide="next" aria-label="Next" title="Próximo" href="#slideshow_1728786902494"><span class="oi oi-chevron-right fa-2x text-white"/><span class="visually-hidden">Próximo</span></a></div></div>
+    </section>
+        </div>
+    </section>
+    
+    <section class="s_text_image o_colored_level d-none o_snippet_mobile_invisible pb0 pt0 d-lg-block" data-snippet="s_text_image" data-name="Texto - imagem" style="background-image: none;" data-invisible="1">
+        
+    </section><section class="s_features o_colored_level pt0 pb0 d-lg-block d-none o_snippet_mobile_invisible" data-snippet="s_features" data-name="Personalizar Recursos" style="position: relative; background-image: none;" data-invisible="1">
+        
+    </section><section class="s_features o_colored_level pt0 pb0 d-lg-block d-none o_snippet_mobile_invisible" data-snippet="s_features" style="background-image: none; position: relative;" data-name="Personalizar Recursos" data-invisible="1">
+        
+    </section><section class="s_process_steps s_process_steps_connector_line o_colored_level pb0 pt0" data-vcss="001" data-snippet="s_process_steps" data-name="Passos" style="background-image: none;">
+        <svg class="s_process_step_svg_defs position-absolute">
+            <defs>
+                <marker class="s_process_steps_arrow_head" markerwidth="15" markerheight="10" refx="6" refy="6" orient="auto">
+                    <path d="M 2,2 L10,6 L2,10 L6,6 L2,2" vector-effect="non-scaling-size"/>
+                </marker>
+            </defs>
+        </svg>
+        
+    </section><section class="s_title o_colored_level pb32 pt32" data-vcss="001" data-snippet="s_title" data-name="Título" style="background-image: none;">
+        <div class="s_allow_columns container">
+            <h2 class="display-3-fs" style="text-align: center;"><strong><span style="font-size: 1.25rem;">Eventos</span></strong></h2>
+        </div>
+    </section><section data-snippet="s_events" class="s_events s_event_upcoming_snippet s_dynamic o_colored_level s_event_event_picture pb0 pt0 o_dynamic_empty" data-name="Eventos" style="background-image: none;" data-number-of-records="4" data-filter-id="3" data-template-key="website_event.dynamic_filter_template_event_event_picture">
+            <div class="o_not_editable container">
+                <div class="css_non_editable_mode_hidden">
+                </div>
+                <div class="dynamic_snippet_template"/>
+            </div>
+        </section>
+    
+        <style>
+    :root {
+        --theme-color: #302b2b;
+        --bg-theme-color: #D3D3D3; /* Azul escuro para o cabeçalho */
+        --text-color-dark: #1C1C1E;
+        --text-color-light: rgba(255, 255, 255, 0.87);
+        --text-color-secondary: rgba(255, 255, 255, 0.60);
+        --bg-color-light: #E0E0E0;
+        --bg-color-dark: #121212;
+        --surface-color: #E3F2FD;
+        --melted-color: #e0dcdc;
+        --basic-color: #fafafa;
+        --secondary-color: #03DAC6;
+        --button-color: #007BFF; /* Azul padrão do Bootstrap */
+        --button-hover-color: #007bff; /* Azul mais escuro para o hover */
+        --button-text-color: #E0E0E0; /* Texto branco para contraste */
+    }
+    
+    /* Estilo do Cabeçalho */
+    .profile-header {
+        background: var(--surface-color); /* Fundo azul escuro */
+        color: ffffff; /* Texto claro para legibilidade */
+        padding-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.6s ease-in-out;
+        border-radius: 8px;
+        border: 1.px solid var( --melted-color);
+    }
+    
+    .profile-header:hover {
+        background: #E3F2FD; /* Fundo preto no hover */
+        color: var(--text-color-light);
+    }
+    
+    /* Nome do Usuário */
+    .user-name {
+        color: var(--text-color-dark);
+        font-size: 1.2rem;
+        margin-top: 10px;
+        font-weight: bold;
+        transition: color 0.6s ease-in-out;
+    }
+    
+    .profile-header:hover .user-name {
+        color: var(--text-color-dark);
+    }
+    
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    
+    .quick-links-section .quick-link-card span {
+    text-align: center;
+    font-size: 1.85rem !important; /* Força o tamanho da fonte */
+    font-weight: 900;
+    color: #007BFF !important; /* Força a cor azul */
+    margin-top: 10px;
+}
+
+    
+    /* Animação de Fade-in */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Estilo da Imagem de Perfil */
+    .profile-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border: 2px solid #fff;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        transition: border-radius 0.4s ease-in-out;
+        
+    }
+    
+    .profile-header:hover .profile-image {
+        border-radius: 5%;
+    }
+    /* Estilo da Seção de Links Rápidos */
+    .quick-links-section {
+        background-color: var(--basic-color);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+    
+    
+    .quick-links-section h6 {
+        margin-bottom: 20px;
+        color: var(--text-color-dark);
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .quick-link-card {
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 0px;
+    text-align: center;
+    font-weight: bold; /* Negrito para o texto */
+    font-weight: 800;
+    <!--box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil */-->
+    padding: 20px; /* Adiciona espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo dos cards */
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    pointer-events: auto !important;
+    z-index: 1 !important;
+}
+
+    /* Ícone dos Cards */
+    .icon-wrapper {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 10px;
+        border: 5.px solid var( --melted-color);
+    }
+    
+    .svg-icon {
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Ícone dos Cards */
+    .quick-links-section .quick-link-icon {
+        width: 100px; /* Usando valor do segundo bloco */
+        height: 100px;
+        margin-bottom: 2px;
+        fill: var(--theme-color);
+        transition: fill 0.3s ease, transform 0.2s ease;
+    }
+    
+    .quick-links-section .quick-link-card:hover .quick-link-icon {
+        fill: #999999;
+        transform: scale(1.1);
+    }
+    
+    /* Texto abaixo dos ícones */
+    .quick-links-section .quick-link-card span {
+        text-align: center;
+        font-size: 1.85rem;
+        font-weight: 900; /* Mantido do primeiro bloco */
+        color: var(--text-color-light);
+    }
+    
+    /* Estilo e animação para contêiner dos ícones */
+    .icon-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 110px;
+        height: 110px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 5px;
+        <!--box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);-->
+        transition:
+            background-color 0.3s ease,
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+        color: #ffffff;
+        cursor: pointer;
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    .icon-wrapper:hover,
+    .icon-wrapper:active {
+        background-color: #f4f4f5;
+        transform: translateY(-2px);
+        <!--box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);-->
+        border-radius: 12%;
+    }
+    
+    
+    /* Botões */
+    .button-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .button-group .btn {
+        flex: 1 1 45%;
+        margin: 0;
+        min-width: 150px;
+        text-transform: none;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+        background-color: var(--button-color); /* Cor azul */
+        color: var(--button-text-color); /* Texto branco */
+        border: none;
+    }
+    
+    .button-group .btn:hover {
+        background-color: var(--button-hover-color); /* Azul mais escuro no hover */
+        color: var(--button-text-color);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+    
+    
+    .button-group .btn-outline-secondary {
+        color: var(--secondary-color);
+        border: 2px solid var(--bg-color-dark);
+        background-color: var(--bg-color-light);
+    }
+    
+    .button-group .btn-outline-secondary:hover {
+        background-color: var(--secondary-color);
+        color: var(--text-color-light);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Animação nas seções de passos e eventos */
+    .s_process_steps,
+    .s_title {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    /* Media Queries */
+    @media (max-width: 767px) {
+        .button-group .btn {
+            flex: 1 1 100%;
+            margin-bottom: 0px;
+            margin-top: 10px;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .icon-wrapper {
+            width: 140px;
+            height: 140px;
+            padding: 12px;
+        }
+    
+        .svg-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 12px;
+        }
+    
+        .icon-title {
+            font-size: 1.8rem;
+           
+        }
+    
+        .quick-links-section {
+            padding: 16px;
+            border-radius: 4px;
+        }
+    
+        .quick-links-section h6 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    
+        .quick-links-section .quick-link-card {
+            width: 140px;
+            padding: 16px;
+        }
+    
+        .quick-links-section .quick-link-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+        }
+    
+        .button-group .btn {
+            min-width: 100px;
+            padding: 10px 16px;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        
+        .button-group .btn {
+            min-width: 100px;
+            padding: 12px 20px;
+        }
+    }
+    
+    </style>
+   
+            
+    <section class="s_call_to_action o_colored_level pt0 o_cc o_cc3 pb0 d-lg-block d-none o_snippet_mobile_invisible" data-snippet="s_call_to_action" data-name="Chamada à ação" style="background-image: none; position: relative;" data-mimetype-before-conversion="image/png" data-mimetype="image/webp" data-original-id="2071" data-original-src="/web/image/2071-95483034/Abstract%20Orange%20Toned%20Graphic%20With%20Smooth%20Gradients%20And%20Shapes.png" data-resize-width="1216"><br/></section>
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"/>
+    
+     <!-- Adicione Vue.js no seu arquivo HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"/>
+    
+    <div id="app">
+        <particle-snow/>
+    </div>
+    
+    <script>
+    Vue.component('particle-snow', {
+        template: `
+            <div id="particles-js" style="width: 100%; height: 100vh;"/>
+        `,
+        mounted() {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 52,
+                        "density": {
+                            "enable": true,
+                            "value_area": 900
+                        }
+                    },
+                   "color": {
+                        "value": [
+                            "#ffffff"
+                            <!--"#b0b0b0",  /* Mercúrio - Cinza claro */-->
+                            <!--"#f5c542",  /* Vênus - Amarelo suave */-->
+                            <!--"#2e9afe",  /* Terra - Azul claro */-->
+                            <!--"#ff6f61",  /* Marte - Vermelho alaranjado */-->
+                            <!--"#d35400",  /* Júpiter - Marrom/laranja suave */-->
+                            <!--"#f7dc6f",  /* Saturno - Amarelo pálido */-->
+                            <!--"#76d7c4",  /* Urano - Azul esverdeado */-->
+                            <!--"#1f618d"   /* Netuno - Azul profundo */-->
+                        ]
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0.2,
+                            "color": "#ffffff"
+                        }
+                    },
+                    "opacity": {
+                        "value": 20.8,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 0.5,
+                            "opacity_min": 0.3,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 1.4,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "size_min": 0.3,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 200, /* Distância máxima para conectar as partículas */
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 0.3 /* Linhas finas para simular constelações */
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 0.4,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse" /* Repulsão ao passar o mouse para criar um efeito interessante */
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "repulse": {
+                            "distance": 100,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 2
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+    });
+
+    new Vue({
+        el: '#app'
+    });
+</script>
+
+
+ <!-- Custom Cursor Script -->
+       <!-- Custom Cursor Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Cria o elemento de cursor personalizado
+        const cursor = document.createElement('div');
+        cursor.classList.add('custom-cursor');
+        document.body.appendChild(cursor);
+
+        // Adiciona o estilo do cursor ao CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .custom-cursor {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #1c1c21; /* Cor padrão do cursor */
+                position: absolute;
+                pointer-events: none;
+                transition: background-color 0.3s ease, transform 0.1s ease;
+                z-index: 10000;
+                opacity: 0.8;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Movimento do cursor personalizado
+        document.addEventListener('mousemove', (e) =&gt; {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+
+        // Muda a cor do cursor ao entrar em uma seção com atributo data-cursor-color
+        const sections = document.querySelectorAll('[data-cursor-color]');
+        sections.forEach((section) =&gt; {
+            section.addEventListener('mouseenter', () =&gt; {
+                const color = section.getAttribute('data-cursor-color');
+                cursor.style.backgroundColor = color;
+            });
+
+            section.addEventListener('mouseleave', () =&gt; {
+                cursor.style.backgroundColor = '#1c1c21'; // Cor padrão do cursor
+            });
+        });
+    });
+</script>
+
+ <!-- Script para verificar dispositivo e exibir alerta -->
+ <!--         <script>-->
+ <!--           document.addEventListener('DOMContentLoaded', function() {-->
+ <!--               // Função para verificar se é um dispositivo móvel-->
+ <!--               function isMobileDevice() {-->
+ <!--                   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);-->
+ <!--               }-->
+
+ <!--               // Exibir alerta se não for dispositivo móvel-->
+ <!--               if (!isMobileDevice()) {-->
+ <!--                   alert('Para uma melhor experiência, recomendamos acessar este portal através de um dispositivo móvel.');-->
+ <!--               }-->
+ <!--           });-->
+ <!--         </script>-->
+
+    
+</div></xpath></data>
