@@ -1,0 +1,55 @@
+<odoo>
+    <template id="indicador_page" name="Indicador Page">
+        <t t-call="website.layout">
+            <div class="container">
+                <h2>Informações Educacionais</h2>
+                <div id="edu_info_container">
+                    <t t-foreach="edu_records" t-as="edu">
+                        <div class="edu-record">
+                            <p><strong>Ano:</strong> <t t-esc="edu.ano"/></p>
+                            <p><strong>Curso:</strong> <t t-esc="edu.curso"/></p>
+                            <p><strong>Disciplina:</strong> <t t-esc="edu.disciplina"/></p>
+                            <p><strong>Docente:</strong> <t t-esc="edu.docente"/></p>
+                            <p><strong>Código da Turma:</strong> <t t-esc="edu.cod_turma"/></p>
+                            <p><strong>Unidade:</strong> <t t-esc="edu.unidade"/></p>
+                            <p><strong>Respondidas:</strong> <t t-esc="edu.respondidas"/></p>
+                            <p><strong>% Respondidas:</strong> <t t-esc="edu.percentual_respondidas"/></p>
+                            <p><strong>Data Fim Disciplina:</strong> <t t-esc="edu.dt_fim_disc"/></p>
+                            <p><strong>Data Fim:</strong> <t t-esc="edu.dt_fim"/></p>
+                            <p><strong>Tipo de Turma:</strong> <t t-esc="edu.tipo_turma"/></p>
+                            <p><strong>Código Professor:</strong> <t t-esc="edu.cod_prof"/></p>
+                            
+                            <!-- Exibição dos registros relacionados -->
+                            <h3>Resultados</h3>
+                            <t t-foreach="edu.id_turma" t-as="resultado">
+                                <p><strong>ID Turma/Disciplina:</strong> <t t-esc="resultado.id_turma_disc"/></p>
+                                <p><strong>Data Inicial:</strong> <t t-esc="resultado.dt_inicial"/></p>
+                                <p><strong>Data Final:</strong> <t t-esc="resultado.dt_final"/></p>
+                            </t>
+                            
+                            <h3>Pesquisas</h3>
+                            <t t-foreach="edu.pesquisas" t-as="pesquisa">
+                                <p><strong>Quantidade de Pesquisas:</strong> <t t-esc="pesquisa.pesquisas"/></p>
+                                <p><strong>Respondidas:</strong> <t t-esc="pesquisa.respondidas"/></p>
+                                <p><strong>% Respondidas:</strong> <t t-esc="pesquisa.percentual_respondidas"/></p>
+                            </t>
+                            
+                            <h3>Pendências</h3>
+                            <t t-foreach="edu.cod_docente" t-as="pendencia">
+                                <p><strong>Média das Notas:</strong> <t t-esc="pendencia.media_notas"/></p>
+                                <p><strong>Média das Faltas:</strong> <t t-esc="pendencia.medias_faltas"/></p>
+                            </t>
+                            
+                            <h3>Apuração</h3>
+                            <t t-foreach="edu.modalidade" t-as="apuracao">
+                                <p><strong>ID Turma/Disciplina:</strong> <t t-esc="apuracao.idturmadisc"/></p>
+                                <p><strong>Data Inicial:</strong> <t t-esc="apuracao.dtinicial"/></p>
+                                <p><strong>Data Final:</strong> <t t-esc="apuracao.dtfinal"/></p>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
