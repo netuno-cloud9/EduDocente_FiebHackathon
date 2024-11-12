@@ -1,0 +1,61 @@
+<odoo>
+    <!-- Visão de Formulário -->
+    <record id="view_resultados_form" model="ir.ui.view">
+        <field name="name">resultados.form</field>
+        <field name="model">blue.edu.resultados</field>
+        <field name="arch" type="xml">
+            <form string="Resultados">
+                <sheet>
+                    <group>
+                    <field name="id_turma_disc"/>
+                    <field name="dt_inicial"/>
+                    <field name="dt_final"/>
+                    <field name="unidade"/>
+                    <field name="modalidade"/>
+                    <field name="curso"/>
+                    <field name="disciplina"/>
+                    <field name="cod_turma"/>
+                    <field name="aula"/>
+                    <field name="data_aula"/>
+                    <field name="cod_docente"/>
+                    <field name="periodo_letivo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Visão de Lista -->
+    <record id="view_resultados_tree" model="ir.ui.view">
+        <field name="name">resultados.tree</field>
+        <field name="model">blue.edu.resultados</field>
+        <field name="arch" type="xml">
+            <tree string="Resultados">
+               
+                <field name="id_turma_disc"/>
+                <field name="dt_inicial"/>
+                <field name="dt_final"/>
+                <field name="unidade"/>
+                <field name="modalidade"/>
+                <field name="curso"/>
+                <field name="disciplina"/>
+                <field name="cod_turma"/>
+                <field name="aula"/>
+                <field name="data_aula"/>
+                <field name="cod_docente"/>
+                <field name="periodo_letivo"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Ação -->
+    <record id="action_resultados" model="ir.actions.act_window">
+        <field name="name">Resultados</field>
+        <field name="res_model">blue.edu.resultados</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_resultados_tree"/>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_resultados" name="Resultados" action="action_resultados" parent="base.menu_custom"/>
+</odoo>
