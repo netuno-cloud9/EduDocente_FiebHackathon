@@ -1,0 +1,611 @@
+<t name="Homepage" t-name="website.homepage">
+    <t t-call="website.layout">
+        <t t-set="pageName" t-value="'homepage'"/>
+        <div id="wrap" class="oe_structure oe_empty">
+            <section class="hero-section d-flex align-items-center justify-content-center position-relative o_colored_level pb0 o_half_screen_height oe_img_bg o_bg_img_center" data-cursor-color="#ffdd57" style="height: 70vh; background-image: url('/web/image/2081-29bd1d99/edu%20paper.webp'); background-size: cover; background-position: center center; background-repeat: no-repeat;" data-mimetype-before-conversion="image/png" data-mimetype="image/webp" data-original-id="2077" data-original-src="/web/image/2077-05f755c5/edu%20paper.png" data-resize-width="1647">
+        <div id="particles-js" class="particles-container">
+            
+        <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1894" height="536"/></div> 
+        <div class="overlay"/> 
+    </section>
+    
+    <section class="s_text_block o_colored_level pb0 pt0 bg-white" data-snippet="s_text_block" data-name="Texto" style="background-image: none;">
+        <div class="s_allow_columns container">
+            <p>&amp;nbsp;<strong><font style="color: rgb(41, 82, 24);"><span style="font-size: 1.125rem;">Comunidade</span></font></strong></p><p><font class="text-black"><span style="font-size: 1.75rem;"><strong>O Edu é</strong></span></font></p><p><span style="font-size: 1.75rem;"><strong>Diferente ? ah,&amp;nbsp;</strong></span></p><p><span style="font-size: 1.75rem;"><strong>Com toda a certeza.</strong></span></p><p><br/></p>
+            
+                <section class="top-nav py-2 bg-light text-center o_colored_level pb40 bg-white pt0" style="z-index: 1000; position: relative; background-image: none;">
+    <a href="/my" class="btn btn-primary moving-button" style="display: inline-block; padding: 12px 24px; min-width: 330px; " data-bs-original-title="" title="">
+        <strong>Entrar</strong>
+    </a>
+</section>
+            <p><span style="font-size: 0.8125rem;">Perguntamos às pessoas que criam e desenvolvem a Plataforma </span><strong><span style="font-size: 0.8125rem;">EduDocente</span></strong><span style="font-size: 0.8125rem;"> o que elas consideram ser uma boa experiência de conexão e aprendizado.</span></p><p><br/></p><p><strong><span style="font-size: 0.8125rem;">O que é uma boa experiência de aprendizagem? </span></strong><span style="font-size: 0.8125rem;">Bem, depende de quem você pergunta.</span></p><p><br/></p><p><span style="font-size: 0.8125rem;">Nas palavras de Lucivânia, facilitadora e especialista em interação educacional:</span><strong><span style="font-size: 0.8125rem;"> “Muitas vezes, me deparar com uma boa experiência de aprendizagem me faz questionar se aquilo foi planejado ou se surgiu de forma natural.”&amp;nbsp;</span></strong></p><p><br/></p><p><span style="font-size: 0.8125rem;">Isso não está muito distante da ideia de que uma boa experiência educacional é aquela que parece </span><strong><span style="font-size: 0.8125rem;">“o mínimo de intervenção possível”</span></strong><span style="font-size: 0.8125rem;">.</span></p><p><br/></p><p><strong><span style="font-size: 0.8125rem;">Mas o que é realmente bom? </span></strong><span style="font-size: 0.8125rem;">E bom para quem? E o que as práticas que valorizamos como exemplares de ensino e interação dizem sobre nós?&amp;nbsp;</span></p><p><br/></p><p><span style="font-size: 0.8125rem;">Conversamos com educadores, pesquisadores e outros responsáveis pela criação de experiências na Plataforma</span><strong><span style="font-size: 0.8125rem;"> EduDocente</span></strong><span style="font-size: 0.8125rem;"> sobre o que eles consideram ser uma boa experiência de aprendizagem.&amp;nbsp;</span></p><p><br/></p><p><span style="font-size: 0.8125rem;">Desde tratamento com indicadores até trocas de experiências com outros colaboradores -&amp;nbsp;<strong>vamos deixar que as respostas deles falem por si.</strong></span></p><p><br/></p></div>
+    </section>
+
+    
+
+    
+    <section class="features-section py-5 bg-light o_colored_level bg-black o_full_screen_height pb24" data-cursor-color="#f28241" style="position: relative; background-image: none;" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Wavy/05&quot;,&quot;colors&quot;:{&quot;c1&quot;:&quot;#FFFFFF&quot;,&quot;c5&quot;:&quot;#6C757D&quot;},&quot;flip&quot;:[],&quot;showOnMobile&quot;:true}"><div class="o_we_shape o_web_editor_Wavy_05 o_shape_show_mobile" style="background-image: url(&quot;/web_editor/shape/web_editor%2FWavy%2F05.svg?c1=%23FFFFFF&amp;c5=%236C757D&quot;); background-color: rgb(14, 101, 190);"/>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-4 mb-4 o_colored_level offset-lg-0 pb0 offset-1 col-10 pt0">
+                    <a href="/indicador" class="text-decoration-none" data-bs-original-title="" title="">
+                        <div class="feature-item p-3 bg-white rounded shadow-sm">
+                            <img src="https://www.svgrepo.com/show/530158/statistics.svg" alt="Monitore Indicadores" class="mb-3" width="120" height="120" loading="lazy"/>
+                            <h3 class="h6 font-weight-bold"><strong>Monitore Indicadores</strong></h3>
+                            <p class="text-muted" style="font-size: 0.75rem;"><strong>Acompanhe o desempenho</strong></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 mb-4 o_colored_level col-10 offset-1 offset-lg-0 pt0">
+                    <a href="/profile/user/10" class="text-decoration-none" data-bs-original-title="" title="">
+                        <div class="feature-item p-3 bg-white rounded shadow-sm">
+                            <img src="https://www.svgrepo.com/show/530157/mind.svg" alt="Experiência Gamificada" class="mb-3" width="120" height="120" loading="lazy"/>
+                            <h3 class="h6 font-weight-bold"><strong>Experiência Gamificada</strong></h3>
+                            <p class="text-muted" style="font-size: 0.75rem;"><strong>Engaje com a comunidade.</strong></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 mb-4 o_colored_level offset-1 offset-lg-0 col-10 pt0">
+                    <a href="/forum/portal-de-noticias-1" class="text-decoration-none" data-bs-original-title="" title="">
+                        <div class="feature-item p-3 bg-white rounded shadow-sm">
+                            <img src="https://www.svgrepo.com/show/530137/vision.svg" alt="Comunicação transparente" class="mb-3" width="120" height="120" loading="lazy"/>
+                            <h3 class="h6 font-weight-bold"><strong>Comunicação</strong></h3>
+                            <p class="text-muted" style="font-size: 0.75rem;"><strong>Compartilhe experiências.</strong></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials-section py-5 o_colored_level pb0 o_cc o_cc2" data-cursor-color="#07a345" style="background-image: none;">
+        <div class="container">
+            <h4 class="text-center mb-5"><strong>Depoimentos</strong></h4>
+            <div class="row">
+                <div class="col-md-6 mb-4 o_colored_level">
+                    <div class="testimonial p-4 bg-white rounded shadow-sm">
+                        <p class="mb-4">"O Edu revolucionou a forma como gerenciamos nossos indicadores."</p>
+                        <h5 class="font-weight-bold"><strong>Maria Silva</strong></h5>
+                        <small class="text-muted">Instrutora II</small>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 o_colored_level pb40">
+                    <div class="testimonial p-4 bg-white rounded shadow-sm">
+                        <p class="mb-4">" Recomendo para qualquer instituição de ensino."</p>
+                        <h5 class="font-weight-bold"><strong>João Pereira</strong></h5>
+                        <small class="text-muted">Instrutor I</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section py-5 bg-primary text-white text-center o_colored_level o_cc o_cc3 bg-black-15 pt80" data-cursor-color="#195dbd" style="position: relative; background-image: none;" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Floats/08&quot;,&quot;colors&quot;:{&quot;c1&quot;:&quot;#085294&quot;,&quot;c2&quot;:&quot;#FFE79C&quot;,&quot;c3&quot;:&quot;#397B21&quot;,&quot;c5&quot;:&quot;#FF0000&quot;},&quot;flip&quot;:[&quot;x&quot;,&quot;y&quot;],&quot;showOnMobile&quot;:true,&quot;animated&quot;:&quot;true&quot;}">
+    <div class="o_we_shape o_web_editor_Floats_08 o_we_animated o_shape_show_mobile" style="background-image: url(&quot;/web_editor/shape/web_editor%2FFloats%2F08.svg?c1=%23085294&amp;c2=%23FFE79C&amp;c3=%23397B21&amp;c5=%23FF0000&amp;flip=xy&quot;); background-position: 100% 100%; background-color: rgb(0, 0, 0);"/>
+    <div class="container">
+        <h5 class="mb-4"><strong>Junte-se a nós!</strong></h5>
+        <h5 class="mb-4">
+            <a href="/contactus" class="btn my-custom-button" style="border-radius: 5px;" data-bs-original-title="" title="">
+                <span style="font-size: 0.8125rem;"><strong>Fale Conosco</strong></span>
+            </a>
+        </h5>
+    </div>
+</section>
+
+        </div>
+
+       <!-- CSS para Estilo e Animações -->
+        <style>
+            
+            .custom-cursor {
+                width: 24px; /* Aumentado de 20px para 40px */
+                height: 24px; /* Aumentado de 20px para 40px */
+                border-radius: 50%;
+                background-color: #07a345;
+                position: absolute;
+                pointer-events: none;
+                transition: background-color 0.6s ease, transform 0.3s ease;
+                z-index: 10000;
+                opacity: 50.7; /* Torna o cursor levemente translúcido */
+            }
+            
+            .custom-cursor.pulse {
+                animation: pulseEffect 1.5s infinite;
+            }
+            /* Estilos para o Container de Partículas */
+            .particles-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+        
+            /* Ajustes para a Sobreposição */
+            .overlay {
+                position: none;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 2;
+            }
+        
+
+           /* Botão padrão (Entrar, Começar) */
+            .btn {
+                font-size: 18px;
+                padding: 15px 30px;
+                text-transform: none;
+                <!--background-color: #e8661a; /* Cor padrão do botão */-->
+                border: none;
+                border-radius: 4px; /* Bordas arredondadas */
+                transition: background-color 0.4s, box-shadow 0.3s, transform 0.2s ease-in-out;
+                position: relative;
+                overflow: hidden;
+                color: #ffffff;
+                <!--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve padrão */-->
+            }
+            
+            /* Efeito de hover para os botões */
+            .btn:hover {
+                background-color: #d85f18; /* Cor levemente mais escura ao passar o mouse */
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+                transform: translateY(-3px); /* Leve elevação no hover */
+            }
+            
+            /* Efeito de ativação do botão */
+            .btn:active {
+                background-color: #b14e14; /* Cor mais escura quando o botão é clicado */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra reduzida no clique */
+                transform: translateY(1px); /* Efeito de pressionado */
+            }
+            
+            /* Efeito de onda ao passar o mouse */
+            .btn::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 120%;
+                height: 120%;
+                background: rgba(255, 255, 255, 0.1); /* Luz sutil */
+                border-radius: 50%; /* Forma circular */
+                transform: translate(-50%, -50%) scale(0);
+                transition: transform 0.4s ease-out;
+                pointer-events: none;
+            }
+            
+            /* Efeito de onda no hover */
+            .btn:hover::after {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            
+            /* Customizações específicas para o botão "Começar" */
+            .comecar-btn {
+                background-color: #ff7f50;
+                border-color: #ff7f50;
+                min-width: 280px; /* Definindo a mesma largura mínima */
+            }
+            
+            .comecar-btn:hover {
+                background-color: #ff6347;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ajuste no hover */
+                transform: translateY(-3px); /* Efeito de elevação leve */
+            }
+            
+            .comecar-btn:active {
+                background-color: #d45532;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra reduzida no clique */
+                transform: translateY(1px); /* Leve efeito de pressionado */
+            }
+        
+            /* Garantir que o Conteúdo da Seção Hero fique acima das Partículas */
+            .hero-section .container {
+                position: relative;
+                z-index: 3;
+            }
+             
+             /* Estilos para o botão "Fale Conosco" */
+            .my-custom-button {
+                font-size: 18px; /* Tamanho da fonte */
+                padding: 15px 30px; /* Padding igual ao botão Entrar */
+                background-color: #e8661a; /* Cor padrão do botão */
+                border: none;
+                border-radius: 5px; /* Mesma borda arredondada */
+                color: #fff; /* Texto em branco */
+                text-transform: none;
+                min-width: 200px; /* Largura mínima igual ao botão Entrar */
+                transition: background-color 0.4s, box-shadow 0.3s, transform 0.2s ease-in-out;
+            }
+            
+            /* Efeito de hover para o botão "Fale Conosco" */
+            .my-custom-button:hover {
+                background-color: #185abc; /* Cor levemente mais escura no hover */
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+                transform: translateY(-3px); /* Leve elevação no hover */
+            }
+            
+            /* Efeito de clique (ativo) no botão "Fale Conosco" */
+            .my-custom-button:active {
+                background-color: #144a9c; /* Cor mais escura ao clicar */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra reduzida no clique */
+                transform: translateY(1px); /* Efeito de pressionado */
+            }       
+            <!--        /* Diminui o tamanho do botão "Começar Agora" */-->
+            <!--.btn.btn-light.btn-lg.my-custom-button {-->
+            <!--  font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */-->
+            <!--  padding: 10px 20px; /* Ajuste o padding interno do botão */-->
+            <!--}-->
+            /* Animação dos cards na seção de features */
+            .features-section .feature-item {
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+        
+            .features-section .feature-item:hover {
+                transform: translateY(-10px); /* Efeito de "flutuar" ao passar o mouse */
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+            }
+            /* Aumenta o tamanho do botão "Home" */
+            .btn.btn-primary {
+              font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+              padding: 15px 30px; /* Ajuste o padding interno do botão */
+              text-transform: none;
+            }
+        
+            /* Cor do botão "Começar Agora" (laranja como no código original) */
+            .começar-btn {
+                background-color: #ff7f50; /* Cor laranja original */
+                border-color: #ff7f50;
+                border-radius: 0%;
+            }
+        
+            .começar-btn:hover {
+                background-color: #ff6347; /* Cor laranja mais escura no hover */
+                border-color: #ff6347;
+            }
+        
+            /* Seção de Recursos */
+            .features-section .feature-item {
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+        
+            features-section .feature-item {
+                width: 100%;
+                max-width: 260px;
+                transition: transform 0.3s, box-shadow 0.3s;
+                margin: 0 auto;
+                padding: 8px; /* Reduzindo o padding do card */
+            }
+        
+            /* Seção de Testemunhos */
+            .testimonials-section .testimonial {
+                transition: transform 0.3s, box-shadow 0.9s;
+            }
+        
+            .testimonials-section .testimonial:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+                    /* Seção CTA */
+            .cta-section {
+                background: linear-gradient(135deg, #ff7f50, #ff6347);
+            }
+        
+            /* Animações de Fundo */
+            .animated-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(255, 255, 255, 0.1);
+                animation: floatBg 10s linear infinite;
+                z-index: 1;
+            }
+        
+               <!--@keyframes pulseEffect {-->
+               <!-- 0% {-->
+               <!--     transform: scale(1);-->
+               <!--     opacity: 0.8; /* Inicialmente, a opacidade é um pouco translúcida */-->
+               <!-- }-->
+               <!-- 50% {-->
+               <!--     transform: scale(1.2); /* O cursor aumenta de tamanho */-->
+               <!--     opacity: 0.4; /* Fica mais transparente no meio da animação */-->
+               <!-- }-->
+               <!-- 100% {-->
+               <!--     transform: scale(1); /* Volta ao tamanho original */-->
+               <!--     opacity: 0.8; /* E à opacidade inicial */-->
+               <!-- }-->
+            }
+        
+             .moving-button {
+                position: relative;
+                animation: moveSideToSide 6s ease-in-out infinite, glowEffect 3s ease-in-out infinite alternate;
+                background-color: #1a73e8;
+                border: none;
+                color: #ffffff;
+                padding: 15px 30px;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .moving-button:hover {
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            <!--@keyframes moveSideToSide {-->
+            <!--    0% {-->
+            <!--        left: 0%;-->
+            <!--    }-->
+            <!--    25% {-->
+            <!--        left: calc(0% - 50px);-->
+            <!--        transform: translateY(-5px); /* Dá um leve efeito de salto no caminho */-->
+            <!--    }-->
+            <!--    50% {-->
+            <!--        left: calc(80% - 200px);-->
+            <!--        transform: translateY(5px); /* Outro leve salto ao atingir o meio */-->
+            <!--    }-->
+            <!--    75% {-->
+            <!--        left: calc(20% - 50px);-->
+            <!--        transform: translateY(-5px);-->
+            <!--    }-->
+            <!--    100% {-->
+            <!--        left: 0%;-->
+            <!--    }-->
+            <!--}-->
+            
+            @keyframes glowEffect {
+                0% {
+                    background-color: #1a73e8;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                }
+                50% {
+                    background-color: #f39c12;
+                    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.7);
+                }
+                100% {
+                    background-color: #e74c3c;
+                    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.7);
+                }
+            }
+
+        
+            @keyframes floatBg {
+                0% { transform: translateY(0) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(180deg); }
+                100% { transform: translateY(0) rotate(360deg); }
+            }
+        
+            /* Responsividade para garantir que a imagem de fundo apareça no mobile */
+            @media (max-width: 768px) {
+                .hero-section {
+                    background-image: url('/web/image/2081-29bd1d99/edu%20paper.webp') !important;
+                    background-size: cover !important;
+                    background-position: center !important;
+                    background-repeat: no-repeat !important;
+                }
+                
+                .hero-section .particles-container {
+                    display: block; /* Garantir que a animação de partículas também apareça */
+                }
+                
+                .features-section .feature-item {
+                    width: 100%;
+                    
+                 .login-card-section .card {
+                    width: 50%;
+                    margin: 0 auto;
+                }
+        
+                /* Ajuste no layout dos botões para telas menores */
+                .cta-buttons {
+                    flex-direction: column; /* Em telas menores, os botões ficarão em coluna */
+                    gap: 5px;
+                }
+            }
+            
+            .my-custom-button
+          
+              /* Estilo do Botão */
+            .btn {
+                font-size: 18px;
+                padding: 15px 30px;
+                text-transform: none;
+                background-color: #e8661a;
+                border: none;
+                border-radius: 5px; /* Ajuste para bordas levemente arredondadas */
+                transition: background-color 0.4s, box-shadow 0.4s, transform 0.2s ease-in-out;
+                position: relative;
+                overflow: hidden;
+                color: #fff;
+                
+            }
+            
+            /* Efeito de Hover */
+            .btn:hover {
+                background-color: #185abc;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                transform: translateY(-3px);
+            }
+            
+            /* Efeito de Ativação */
+            .btn:active {
+                background-color: #144a9c;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                transform: translateY(1px);
+            }
+            
+            /* Efeito de Onda ao Passar o Mouse */
+            .btn::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 120%;
+                height: 120%;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 12%;
+                transform: translate(-50%, -50%) scale(0);
+                transition: transform 0.4s ease-out;
+                pointer-events: none;
+            }
+            
+            /* Ativa o efeito de onda no hover */
+            .btn:hover::after {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            
+            /* Ajuste do texto para manter legibilidade */
+            .btn strong {
+                color: #fff;
+                font-weight: bold;
+            }
+
+            
+        </style>
+
+        <!-- Inclusão dos scripts de bibliotecas -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"/>
+        
+        <!-- Configuração das Partículas com Constelações -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": {
+                            "value": 24,
+                            "density": {
+                                "enable": true,
+                                "value_area": 600
+                            }
+                        },
+                        "color": {
+                            "value": ["#ffffff", "#ffdd57", "#f28241", "#07a345", "#FF6347", "#000000", "#195dbd"]
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0.0,
+                                "color": "#cff4ff"
+                            }
+                        },
+                        "opacity": {
+                            "value": 90.7,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 0.5,
+                                "opacity_min": 0.2,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 14,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 2.3,
+                                "size_min": 10,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": false
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 1.1,
+                            "random": true,
+                            "direction": "none",
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": true,
+                                "rotateX": 3000,
+                                "rotateY": 3000
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "repulse"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 200,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 200,
+                                "size": 10,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 150,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            });
+        </script>
+        
+        <!-- Div onde as partículas aparecerão -->
+        <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"/>
+        
+        <!-- Custom Cursor Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cursor = document.createElement('div');
+                cursor.classList.add('custom-cursor');
+                document.body.appendChild(cursor);
+        
+                document.addEventListener('mousemove', (e) =&gt; {
+                    cursor.style.left = `${e.pageX}px`;
+                    cursor.style.top = `${e.pageY}px`;
+                });
+        
+                const sections = document.querySelectorAll('[data-cursor-color]');
+                sections.forEach((section) =&gt; {
+                    section.addEventListener('mouseenter', () =&gt; {
+                        const color = section.getAttribute('data-cursor-color');
+                        cursor.style.backgroundColor = color;
+                    });
+        
+                    section.addEventListener('mouseleave', () =&gt; {
+                        cursor.style.backgroundColor = '#1c1c21'; // Cor padrão do cursor
+                    });
+                });
+            });
+        </script>
+        
+        <!-- JavaScript para Interatividade com Gráficos usando p5.js -->
+
+    </t>
+</t>
