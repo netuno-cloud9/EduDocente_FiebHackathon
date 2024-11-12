@@ -1,0 +1,1072 @@
+<t name="Indicador Page" t-name="blue_edu_website.indicador_page">
+    <t t-call="website.layout">
+        <div class="container my-2"> <!-- Ajuste para "my-2" reduzindo a margem vertical -->
+            <header class="profile-header">
+              
+                <div class="container py-2 position-top" style="z-index: 1;">
+                    <div class="d-flex flex-column align-items-center mb-2 greeting-section">
+                        <t t-set="user" t-value="request.env.user"/>
+                        <t t-set="user_image_url" t-value="'/web/image/res.users/' + str(user.id) + '/image_1920'"/>
+                        <img t-att-src="user_image_url" alt="Imagem do perfil" class="img-fluid profile-image" style="margin-top: -20px;"/>
+                        <h5 class="user-name mt-1">Olá, <t t-esc="user.name"/></h5>
+                    </div>
+                    
+                    <div class="action-buttons mt-2">
+                        <div class="button-group d-flex flex-wrap justify-content-center gap-1">
+                            <a href="/my" class="btn btn-primary btn-sm w-100" title="" data-bs-original-title="Home"><strong>Home</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+             <!-- Separator between Greeting and Meus Indicadores -->
+            <!-- Separator between sections -->
+                <hr class="mt-4 mb-1"/>
+
+                <!-- Meus Indicadores Section -->
+                <div class="mb-4">
+                    <h6 class="small-title">Meus Indicadores</h6>
+                    <hr/>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <!-- Desempenho Docente -->
+                        <div class="text-center flex-fill" data-bs-toggle="modal" data-bs-target="#desempenhoModal">
+                            <p class="indicator-title">Desempenho Docente</p>
+                            <div class="icon-wrapper mb-4">
+                                <img src="https://www.svgrepo.com/show/530158/statistics.svg" alt="Ícone de Desempenho Docente" class="svg-icon"/>
+                            </div>
+                            <div class="progress" style="background-color: #e0f7fa;">
+                                <div class="progress-bar bg-gradient-blue" id="desempenho-progress-bar" style="width: 54%; background: linear-gradient(45deg, #03a9f4, #2196f3);">50%</div>
+                            </div>
+                            <p class="meta-info text-muted">Meta: 87%</p>
+                        </div>
+                        
+                        <!-- Separator -->
+                        <div class="separator"/>
+                        
+                        <!-- Respondentes da Pesquisa -->
+                        <div class="text-center flex-fill" data-bs-toggle="modal" data-bs-target="#respondentesModal">
+                            <p class="indicator-title">Respondentes da Pesquisa</p>
+                            <div class="icon-wrapper mb-4">
+                                <img src="https://www.svgrepo.com/show/530145/raise-your-hand.svg" alt="Respondentes Icon" class="svg-icon"/>
+                            </div>
+                            <div class="progress" style="background-color: #e0f7fa;">
+                                <div class="progress-bar bg-gradient-blue" id="respondentes-progress-bar" style="width: 54%; background: linear-gradient(45deg, #03a9f4, #2196f3);">?%</div>
+                            </div>
+                            <p class="meta-info text-muted">Meta: 40%</p>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="separator"/>
+
+            <!-- Form Section -->
+            <hr class="mt-4 mb-4"/>
+
+                <!-- Seção: Minhas Turmas -->
+                <h6 class="small-title">Minhas Turmas</h6>
+                <hr/>
+
+             <form>
+                    <div class="mb-4">
+                        <select id="cod-turma-dropdown" class="form-select">
+                            <option value="">Selecione uma turma</option>
+                            <t t-foreach="turma_data_list" t-as="turma">
+                                <option t-att-value="turma[0]"><t t-esc="turma[0]"/></option>
+                            </t>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <select id="id-turma-disc-dropdown" class="form-select select-disabled">
+                            <option value="">Selecione um ID de Turma</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="disciplina-visualizacao" class="form-label">Disciplina:</label>
+                        <input type="text" id="disciplina-visualizacao" class="form-control" readonly="true"/>
+                    </div>
+                </form>
+
+
+            <div id="edu_info_container" class="info-container">
+            <hr class="divider"/>
+            <div id="turma_info" class="info-section turma-section">
+                <div class="info-content">
+                    <p><strong>📍 Unidade:</strong> <span id="unidade-value">FEIRA</span></p>
+                    <p><strong>📊 Total Pesquisas:</strong> <span id="turma-pesquisas-value">40</span></p>
+                    <p><strong>✅ Respondidas:</strong> <span id="turma-respondidas-value">20</span></p>
+                    <p><strong>📈 % Respondidas:</strong> <span id="turma-percentual-respondidas-value">50%</span></p>
+                    <p><strong>📆 Data Inicial:</strong> <span id="turma-dt-inicial-value">2023-01-01</span></p>
+                    <p><strong>📅 Data Final:</strong> <span id="turma-dt-final-value">2023-12-01</span></p>
+                    
+                    <!-- Melhorias na exibição da Modalidade -->
+                    <p><strong>📝 Modalidade:</strong> 
+                        <span id="turma-modalidade-value" class="modalidade-label">Modalidade</span> <!-- Aplicando classe de estilo -->
+                    </p>
+                </div>
+            </div>
+        
+            <hr class="divider"/>
+        
+            <!-- Disciplina Information Section -->
+            <div id="disciplina_info" class="info-section disciplina-section d-none">
+                <h5><i class="fas fa-info-circle"/> Dados da Disciplina</h5>
+                <div class="info-content">
+                    <p><strong>📊 Quantidade de Pesquisas:</strong> <span id="disciplina-pesquisas-value">0</span></p>
+                    <p><strong>✅ Respondidas:</strong> <span id="disciplina-respondidas-value">0</span></p>
+                    <p><strong>📈 % Respondidas:</strong> <span id="disciplina-percentual-respondidas-value">0%</span></p>
+                    <p><strong>📆 Data Inicial:</strong> <span id="disciplina-dt-inicial-value">--</span></p>
+                    <p><strong>📅 Data Final:</strong> <span id="disciplina-dt-final-value">--</span></p>
+                    
+                    <!-- Melhorias na exibição da Modalidade para disciplina -->
+                    <p><strong>📝 Modalidade:</strong> 
+                        <span id="disciplina-modalidade-value" class="modalidade-label">--</span> <!-- Aplicando classe de estilo -->
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+              <!-- Minhas UC’s Section -->
+            <div class="mb-4">
+                <h6 class="small-title">Minhas UC's</h6>
+                <hr/>
+                <!-- First Row -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <!-- Apuração de Resultado -->
+                    <div class="stat-card text-center flex-fill" data-bs-toggle="modal" data-bs-target="#apuracaoModal">
+                        <div class="icon-wrapper mb-2">
+                            <img src="https://www.svgrepo.com/show/297350/trekking-walker.svg" alt="Apuração de Resultado Icon" class="svg-icon" loading="lazy"/>
+                        </div>
+                        <div class="stat-value" id="apuracao-value"><t t-esc="total_apuracao"/></div>
+                        <p class="stat-title">Apuração de Resultado</p>
+                    </div>
+                    <!-- Separator -->
+                    <div class="separator"/>
+                    <!-- Conteúdo Efetivo -->
+                    <div class="stat-card text-center flex-fill" data-bs-toggle="modal" data-bs-target="#conteudoModal">
+                        <div class="icon-wrapper mb-2">
+                            <img src="https://www.svgrepo.com/show/297340/mountain-goal.svg" alt="Conteúdo Efetivo Icon" class="svg-icon" loading="lazy"/>
+                        </div>
+                        <div class="stat-value" id="conteudo-value"><t t-esc="total_aulas"/></div>
+                        <p class="stat-title">Conteúdo Efetivo</p>
+                    </div>
+                </div>
+                <!-- Second Row -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <!-- Média Faltas -->
+                    <div class="stat-card text-center flex-fill" data-bs-toggle="modal" data-bs-target="#faltasModal">
+                        <div class="icon-wrapper mb-2">
+                            <img src="https://www.svgrepo.com/show/297368/baseball.svg" alt="Média Faltas Icon" class="svg-icon" loading="lazy"/>
+                        </div>
+                        <div class="stat-value" id="faltas-value"><t t-esc="media_faltas"/></div>
+                        <p class="stat-title">Média de Faltas</p>
+                    </div>
+                    <!-- Separator -->
+                    <div class="separator"/>
+                    <!-- Média Notas -->
+                    <div class="stat-card text-center flex-fill" data-bs-toggle="modal" data-bs-target="#notasModal">
+                        <div class="icon-wrapper mb-2">
+                            <img src="https://www.svgrepo.com/show/125674/grades.svg" alt="Média Notas Icon" class="svg-icon" loading="lazy"/>
+                        </div>
+                        <div class="stat-value" id="notas-value"><t t-esc="media_notas"/></div>
+                        <p class="stat-title">Média de Notas</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal para Média de Faltas -->
+            <div class="modal fade" id="faltasModal" tabindex="-1" aria-labelledby="faltasModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="faltasModalLabel">📊 Média de Faltas</h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+                        </div>
+                        <div class="modal-body text-center">
+                            <p>A Média de Faltas reflete a frequência dos alunos em suas aulas. Manter um baixo índice de faltas é crucial para o bom desempenho acadêmico.</p>
+                            
+                            <p>Faltas por aluno até agora:</p>
+                            <p class="result-value" style="font-size: 2.5rem; font-weight: bold;"><t t-esc="media_faltas"/></p>
+                            <p>📅 Acompanhe as faltas para garantir sucesso acadêmico!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+       
+           <!-- Modal para Média Notas -->
+            <div class="modal fade" id="notasModal" tabindex="-1" aria-labelledby="notasModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center w-100" id="notasModalLabel">
+                                🏅 <strong>Média de Notas</strong>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+                        </div>
+                        <div class="modal-body text-center">
+                            <p class="mb-3">
+                                <em>A Média de Notas indica o desempenho acadêmico dos alunos em suas avaliações.</em>
+                            </p>
+                            <p class="mb-4">
+                                Um bom acompanhamento desse indicador pode ajudar a identificar áreas de dificuldade e possibilitar intervenções pedagógicas.
+                            </p>
+                            
+                            <hr class="my-4"/> <!-- Linha separadora para destacar o resultado -->
+                            
+                            <p class="mb-2" style="font-size: 1.2rem;">Desempenho até agora:</p>
+                            <p class="result-value" style="font-size: 2.5rem; color: #FF5722; font-weight: bold;">
+                                <t t-esc="media_notas"/>
+                            </p>
+            
+                            <hr class="my-4"/> <!-- Segunda linha separadora -->
+            
+                            <p class="mb-2">
+                                🌟 <strong>Continue acompanhando o progresso dos alunos!</strong>
+                            </p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+             <!-- Modal for Desempenho Docente -->
+            <div class="modal fade" id="desempenhoModal" tabindex="-1" aria-labelledby="desempenhoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="desempenhoModalLabel">Desempenho Docente</h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                            Resultado da Pesquisa de Satisfação Alunos, referente ao tema Desempenho Docente.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal for Respondentes da Pesquisa with GIF from URL -->
+            <div class="modal fade" id="respondentesModal" tabindex="-1" aria-labelledby="respondentesModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="respondentesModalLabel">Respondentes da Pesquisa</h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+                        </div>
+                        <div class="modal-body text-center">
+                            <p>
+                            Corresponde ao Percentual de respostas dos alunos nas pesquisas de Satisfação vinculadas ao Docente.</p>
+                            <p class="text-muted mt-3" style="font-size: 0.9em;">
+                                <strong>Dica para aumentar os respondentes:</strong> 
+                                Incentive a participação destacando a importância das pesquisas, ofereça pequenos prêmios ou reconhecimentos pela participação.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <!-- Modal para Apuração de Resultado -->
+            <div class="modal fade" id="apuracaoModal" tabindex="-1" aria-labelledby="apuracaoModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center w-100" id="apuracaoModalLabel">
+                                📊 <strong>Apuração de Resultado</strong>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+                        </div>
+                        <div class="modal-body text-center">
+                            <p class="mb-3">
+                                <em>Sinaliza o número de disciplinas pendentes de apuração de resultados.</em>
+                            </p>
+                            <hr class="my-4"/> <!-- Linha separadora para destacar o resultado -->
+            
+                            <p class="mb-2" style="font-size: 1.rem;">Disciplinas pendentes de apuração:</p>
+                            <p class="result-value" style="font-size: 2.5rem; font-weight: bold;">
+                                <t t-esc="total_apuracao"/>
+                            </p>
+            
+                            <hr class="my-4"/> <!-- Segunda linha separadora -->
+            
+                            <p class="mb-2">
+                                📅 <strong>Garanta que todas as disciplinas sejam apuradas corretamente!</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Conteúdo Efetivo -->
+            <div class="modal fade" id="conteudoModal" tabindex="-1" aria-labelledby="conteudoModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center w-100" id="conteudoModalLabel">
+                                📝 <strong>Conteúdo Efetivo</strong>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+
+                        </div>
+                        <div class="modal-body text-center">
+                            <p class="mb-3">
+                                <em>Monitora o número de planos de aula sem lançamento de conteúdo no portal docente.</em>
+                            </p>
+            
+                            <hr class="my-4"/> <!-- Linha separadora para destacar o resultado -->
+            
+                            <p class="mb-2" style="font-size: 1.2rem;">Planos de aula pendentes de lançamento:</p>
+                            <p class="result-value" style="font-size: 2.5rem; font-weight: bold;">
+                                <t t-esc="total_aulas"/>
+                            </p>
+            
+                            <hr class="my-4"/> <!-- Segunda linha separadora -->
+            
+                            <p class="mb-2">
+                                💡 <strong>Regularize os lançamentos para evitar atrasos na emissão de certificados!</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+       <!--<div class="font-monospace pt8 bg-light" style="padding: 15px; border: 2px dashed #cccccc; border-radius: 10px; text-align: center;">-->
+       <!--         <p style="font-size: 0.9em;">Pronto para começar sua próxima aula?</p>-->
+       <!--         <a href="https://edudocente.conexaoazul.com/web#action=907&amp;model=plano.de.aula&amp;view_type=list&amp;cids=1&amp;menu_id=679" class="btn btn-primary" style="font-size: 0.9em; padding: 8px 16px; border-radius: 5px;"><span data-o-link-zws="start" contenteditable="false"/>-->
+       <!--             <b>Acessar Plano de Aula</b>-->
+       <!--         </a>-->
+       <!--     </div>-->
+       <style>
+            @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+            :root {
+                --theme-color:#E3F2FD; /* Cor principal do tema */
+                
+                --theme-color2: #007AFF;
+                --text-color-dark: #000000; /* Cor do texto para fundo claro */
+                --text-color-light: #F2F2F2; /* Cor do texto para fundo escuro */
+                --bg-color-light: #E0E0E0; /* Cor de fundo claro */
+                --bg-color-dark: #0051b3;
+                --secondary-color: #6c757d; /* Cor secundária para botões */
+                --highlight-color: #ffcc00; /* Cor de destaque (exemplo) */
+                --dark-blue: #0056b3; /* Azul escuro para contraste */
+                
+            }
+        
+            /* Estilo do Cabeçalho */
+            .profile-header {
+                background: var(--theme-color); /* Fundo azul */
+                color: var(--text-color-light); /* Texto claro */
+                border-radius: 4px;
+                padding: 20px 15px;
+                position: relative;
+                overflow: hidden;
+                transition: background 0.6s ease-in-out, color 0.6s ease-in-out;
+            }
+        
+            /* Estilo da imagem de perfil */
+            .profile-image {
+                width: 120px; /* Ajustei para ser um pouco menor */
+                height: 120px; /* Ajustei para ser um pouco menor */
+                object-fit: cover;
+                border-radius: 50%;
+                border: 3px solid var(--bg-color-light);
+                margin-top: -50px; /* Subi a imagem de perfil para que fique mais próxima do topo */
+                margin-bottom: 20px;
+                transition: border-radius 0.4s ease-in-out;
+            }
+            
+            .profile-header:hover .profile-image {
+                border-radius: 15%; /* Transição suave para formato menos arredondado */
+            }
+            
+            /* Nome do Usuário */
+            .user-name {
+                color: var(--text-color-dark); /* Texto branco */
+                font-size: 1.20rem;
+                margin-top: 10px;
+                font-weight: bold;
+                transition: color 0.4s ease-in-out;
+            }
+            
+                    
+            .user-info {
+                margin-left: 10px;
+                color: white;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            
+            /* Estilos específicos para a barra de progresso */
+            .progress {
+                background-color: #e0f7fa; /* Cor de fundo da barra de progresso */
+                border-radius: 10px; /* Bordas arredondadas */
+                height: 20px; /* Altura da barra de progresso */
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .progress-bar {
+                width: 0%; /* Largura inicial */
+                height: 100%; /* Preenche toda a altura da barra */
+                background-color: #1de9b6; /* Cor de fundo inicial */
+                background: linear-gradient(45deg, #1de9b6, #1dc4e9); /* Gradiente de cor */
+                transition: width 0.5s ease; /* Transição suave ao alterar a largura */
+                border-radius: 10px; /* Mesmo raio para as bordas da barra */
+                text-align: center; /* Centraliza o texto na barra */
+                color: white; /* Cor do texto */
+                font-weight: bold; /* Texto em negrito */
+            }
+            
+               /* Ajustes gerais para a página */
+               .particles-container {
+                position: absolute; /* Certifica que cobre toda a área */
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -1; /* Coloca as partículas atrás do conteúdo do header */
+                }
+            
+                    /* Destaque para os Títulos */
+                .indicator-title {
+                    font-size: 1.0rem; /* Aumenta o tamanho da fonte */
+                    font-weight: bold; /* Negrito para dar ênfase */
+                    color: #0056b3; /* Cor de destaque */
+                    margin-bottom: 10px; /* Espaço inferior para separação do conteúdo abaixo */
+                    text-align: center; /* Centralizar o texto */
+                }
+                
+                /* Opção de sombreamento para os títulos */
+                .indicator-title::after {
+                    content: '';
+                    display: block;
+                    width: 60px;
+                    height: 4px;
+                    background-color: #0056b3; /* Mesmo tom de azul para consistência */
+                    margin: 8px auto 0 auto; /* Centraliza a barra abaixo do título */
+                }
+    
+            
+                /* Ajustes Específicos para Cada Indicador (Opcional) */
+                .icon-wrapper.mb-2 img.desempenho-docente {
+                    /* Estilos específicos para Desempenho Docente */
+                }
+            
+                    /* Style for the icon wrapper to enable hover effects */
+                .icon-wrapper {
+                    cursor: pointer;
+                    display: inline-block;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    border-radius: 12px; /* Make the icon wrapper circular */
+                    padding: 15px;
+                    background-color: white; /* Background color for the border effect */
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+                    border: 2px solid #dddd; /* Border around the icon wrapper */
+                }
+                
+                /* Hover effect for the icon wrapper */
+                .icon-wrapper:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                    border-color: #bbb; /* Slightly darker border on hover */
+                    background-color: #f9f9f9; /* Slight background color change */
+                }
+                
+                /* Style for the icon images */
+                .icon-wrapper img.svg-icon {
+                    width: 200px;
+                    height: 120px;
+                    transition: transform 0.3s ease;
+                }
+                
+                /* Hover effect for the icon images */
+                .icon-wrapper:hover img.svg-icon {
+                    transform: scale(1.05);
+                }
+                
+                /* Transition effect for the icon image */
+                .icon-wrapper img.svg-icon {
+                    transition: filter 0.3s ease;
+                }
+                
+                /* For buttons under Minhas UC’s, increase font size and alignment */
+                .custom-btn {
+                    font-size: 0.8rem; /* Larger font size for text in buttons */
+                    padding: 15px 20px; /* Adjust padding for better spacing */
+                    text-align: center; /* Ensure proper centering */
+                }
+                
+                .stat-value {
+                    display: none;
+                }
+    
+                .stat-title {
+                margin-top: 10px; /* Espaço superior opcional */
+                margin-bottom: 15px; /* Aumenta o espaço inferior */
+                font-size: 1rem; /* Tamanho do texto do título */
+                font-weight: 600; /* Ajuste para deixar o título mais destacado */
+                color: #333; /* Cor do título */
+                text-align: center; /* Alinhamento centralizado */
+                }
+        
+        
+                .value-text {
+                    font-weight: bold;
+                    font-size: 1.0rem; /* Bigger value text */
+                    color: #FFD700; /* Soft Yellow as in previous styling */
+                }
+                    
+                .small-title {
+                    font-size: 1.2rem; /* Certifique-se de que o tamanho do texto é consistente */
+                    font-weight: 800;
+                    text-align: center; /* Centraliza os títulos */
+                    margin-bottom: 1rem; /* Garantir espaço inferior adequado */
+                }
+                
+                .separator {
+                    border-left: 1px solid #ddd;
+                    height: 100%;
+                    margin: 0 20px;
+                }
+            
+                .btn-primary {
+                    background-color: #0056b3;
+                    border: none;
+                    border-radius: 2px;
+                }
+                <!--.btn-outline-secondary {-->
+                    <!--border-color: #0056b3;-->
+                <!--    color: #0056b3;-->
+                <!--}-->
+                <!--.btn-outline-secondary:hover {-->
+                <!--    background-color: #0056b3;-->
+                <!--    color: #ffffff;-->
+                <!--}-->
+            
+                /* Apuração de Resultado Button */
+                #total_apuracao_btn {
+                    background-color: #355C7E; /* Warm Purple */
+                    color: white;
+                }
+                
+                #total_apuracao_btn:hover {
+                    background-color: #7B1FA2; /* Dark Purple */
+                }
+                
+                /* Conteúdo Efetivo Button */
+                #total_resultados_btn {
+                    background-color: #6C5B9B; /* Vibrant Orange */
+                    color: white;
+                }
+                
+                #total_resultados_btn:hover {
+                    background-color: #F4511E; /* Deep Orange */
+                }
+                
+                /* Respondentes Button */
+                #media_ponderada_btn {
+                    background-color: #cfbc51; /* Fresh Lime Green */
+                    color: white;
+                }
+                
+                #media_ponderada_btn:hover {
+                    background-color: #689F38; /* Dark Lime Green */
+                }
+                
+                .bg-gradient-teal {
+                    background: linear-gradient(45deg, #00A6A6, #0A2342); /* Teal Blue to Deep Navy */
+                }
+                
+                .bg-gradient-blue {
+                    background: linear-gradient(45deg, #2196f3, #0A2342); /* Blue to Deep Navy */
+                }
+                
+               /* Seções de Informação */
+                .info-section {
+                    background: linear-gradient(135deg, var(--color-primary-green) 0%, var(--color-pale-mint) 100%);
+                    padding: 25px 30px;
+                    border-radius: 8px;
+                    border: 1px solid var(--color-soft-yellow-border);
+                    margin-bottom: 25px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .info-section::before {
+                    content: "";
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    width: 60px;
+                    height: 60px;
+                    background: url('https://www.svgrepo.com/show/303827/info.svg') no-repeat center center;
+                    background-size: 100%;
+                    opacity: 0.1;
+                    pointer-events: none;
+                }
+                
+                .info-section:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                }
+                
+                .info-section .info-content p {
+                    font-size: 0.88rem;
+                    color: var(--color-text-primary);
+                    margin-bottom: 8px;
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .info-section .info-content p strong {
+                    margin-right: 8px;
+                    display: flex;
+                    align-items: center;
+                    font-weight: 600;
+                    color: var(--color-primary-blue);
+                }
+                
+               /* Estilo para destacar a Meta */
+                .meta-info {
+                    font-size: 1rem; /* Aumenta o tamanho da fonte */
+                    font-weight: bold; /* Aplica negrito para dar destaque */
+                    color: #ff5722; /* Cor de destaque, como laranja, para chamar a atenção */
+                    text-align: center; /* Centraliza o texto */
+                    margin-top: 8px; /* Espaço superior para separação */
+                }
+                
+                /* Adiciona uma pequena barra abaixo da meta */
+                .meta-info::after {
+                    content: '';
+                    display: block;
+                    width: 40px;
+                    height: 3px;
+                    background-color: #ff5722; /* Mesma cor da meta */
+                    margin: 6px auto 0 auto; /* Centraliza a barra abaixo do texto da meta */
+                }
+    
+        
+                .info-content  {
+                    margin-bottom: 12px;
+                    font-size: 1rem; /* Ajusta o tamanho da fonte para melhor legibilidade */
+                }
+            
+                .modal-header {
+                    background-color: #f2f2f2;
+                    border-bottom: 1px solid #ddd;
+                }
+            
+                .modal-title {
+                    font-size: 1.2rem;
+                    font-weight: 800;
+                }
+            
+                .modal-body {
+                    font-size: 16px;
+                    color: #555;
+                }
+            
+                .modal-footer .btn-secondary {
+                    background-color: #6c757d;
+                    border: none;
+                }
+            
+                /* Botões lado a lado */
+                .button-group {
+                    display: flex;
+                    justify-content: center; /* Centralizar os botões */
+                    align-items: center;
+                    flex-wrap: wrap; /* Permite que os botões se ajustem em múltiplas linhas */
+                    gap: 10px; /* Espaçamento entre os botões */
+                    max-width: 200px; /* Largura máxima do container para centralizar */
+                    margin: 0 auto; /* Centraliza o grupo de botões */
+                }
+                
+                .button-group .btn {
+                    flex: 1 1 45%; /* Cada botão ocupa 45% da largura para garantir que fiquem dois por linha */
+                    margin: 0; /* Remove margem lateral para uniformidade */
+                    min-width: 100px; /* Largura mínima dos botões */
+                    text-transform: none;
+                    padding: 10px; /* Aumenta a área clicável dos botões */
+                    font-size: 16px; /* Aumenta a legibilidade */
+                    border-radius: 4px; /* Bordas arredondadas para um visual moderno */
+                    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+                    background-color: var(--theme-color2); /* Fundo azul */
+                    color: var(--text-color-light); /* Texto preto */
+                    border: 0px solid var(--text-color-dark); /* Borda preta */
+                }
+                
+                .button-group .btn-outline-secondary {
+                    color: var(--secondary-color);
+                    border: 0px solid var(--bg-color-dark);
+                    background-color: var(--theme-color2);
+                }
+                
+                .button-group .btn:hover {
+                    background-color: var(--theme-color2); /* Muda o fundo para a cor do tema ao passar o mouse */
+                    color: var(--text-color-light); /* Texto branco no hover */
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover */
+                }
+                
+                .button-group .btn-outline-secondary:hover {
+                    background-color: var(--secondary-color);
+                    color: var(--text-color-light); /* Texto branco no hover */
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                }
+                
+                .icon-input-wrapper {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .form-icon {
+                    width: 44px; /* Increase the size of the icon */
+                    height: 44px; /* Increase the size of the icon */
+                    position: absolute;
+                    left: 10px;
+                    pointer-events: none; /* Prevent icon from blocking clicks */
+                }
+                
+               /* Ajustes no formulário */
+                .form-select, .form-control {
+                    font-size: 1.4rem; /* Aumenta o tamanho do texto dos campos de formulário */
+                    padding: 20px; /* Aumenta o espaçamento interno dos campos para facilitar o toque em dispositivos móveis */
+                    margin-bottom: 20px; /* Aumenta o espaçamento entre os itens do formulário */
+                    border-radius: 8px; /* Bordas arredondadas */
+                    border: 2px solid #ddd; /* Borda mais espessa para dar destaque */
+                }
+                
+                .form-label {
+                    font-size: 1.5rem; /* Aumenta o tamanho das labels (rótulos) dos campos do formulário */
+                    margin-bottom: 10px; /* Adiciona um espaçamento entre a label e o campo */
+                }
+                
+                .form-select:focus, .form-control:focus {
+                    border-color: var(--theme-color);
+                    outline: none;
+                    box-shadow: 0 70 50px rgba(58, 123, 213, 0.5);
+                }
+                
+                .mb-4 {
+                    margin-bottom: 1.5rem; /* Add more space between form fields */
+                }
+                
+                /* Ajustes gerais */
+                body {
+                    font-size: 14px;
+                }
+                
+                /* Aumentar o tamanho do card do formulário */
+                .info-section {
+                    padding: 50px; /* Aumenta o espaçamento interno (padding) */
+                    border-radius: 12px; /* Mantém as bordas arredondadas */
+                    background-color: #f9f9f9;
+                    margin-bottom: 30px; /* Aumenta o espaçamento entre os cards */
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Aumenta a sombra do card para destaque */
+                    transition: transform 0.3s ease-in-out; /* Transição suave para hover */
+                }
+                
+                .info-section:hover {
+                    transform: translateY(-5px); /* Adiciona um leve efeito de elevação ao passar o mouse */
+                }
+                
+                /* Ajustes para os itens do formulário */
+                .info-content p {
+                    font-size: 1.2rem; /* Aumenta o tamanho da fonte dos itens */
+                    line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+                    margin-bottom: 15px; /* Aumenta o espaçamento entre os itens */
+                }
+                
+                .info-content p strong {
+                    font-size: 1.2rem; /* Aumenta o tamanho dos títulos (ex: "Unidade", "Total Pesquisas") */
+                    font-weight: 600; /* Deixa os títulos mais destacados */
+                }
+                
+                /* Ajustes para valores */
+                .info-content span {
+                    font-size: 1.1rem; /* Aumenta o tamanho dos valores exibidos */
+                    font-weight: normal; /* Coloca os valores em negrito */
+                }
+                
+                /* Ajuste dos ícones */
+                .svg-icon {
+                    width: 60px;
+                    height: 60px;
+                    margin-bottom: 10px;
+                }
+                
+                /* Ajustes responsivos */
+                @media (max-width: 767px) {
+                    /* Garantir que o conteúdo se expanda e role em dispositivos móveis */
+                    .info-section {
+                        padding: 15px;
+                    }
+                    
+                    .info-content p {
+                        font-size: 1.1rem; /* Aumenta o tamanho da fonte ainda mais em dispositivos móveis */
+                    }
+                
+                    .info-content p strong {
+                        font-size: 1.1rem;
+                    }
+            
+            
+            /* Exemplo: ajuste específico para a porcentagem de respondidas */
+                #turma-percentual-respondidas-value,
+                #disciplina-percentual-respondidas-value {
+                    font-size: 1.2rem; /* Deixa os percentuais ainda maiores */
+                    color: #0056b3; /* Cor de destaque para os valores */
+                    font-weight: bold;
+                }
+                .svg-icon {
+                    width: 60px;
+                    height: 60px;
+                }
+            
+                .form-select, .form-control {
+                    font-size: 1.0rem;
+                    padding: 15px; /* Mais espaço nos campos para toque */
+                }
+            
+                .form-label {
+                    font-size: 1.0rem; /* Aumenta o tamanho das labels */
+                }
+                
+                .modalidade-label {
+                    font-size: 1.0rem;
+                }
+                
+                h5 {
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                }
+            
+                /* Ajustes para botões em telas menores */
+                .button-group .btn {
+                    flex: 1 1 100%; /* Em telas menores, cada botão ocupa 100% da largura */
+                    margin-bottom: 0px; /* Espaço entre os botões */
+                    margin-top: 10px; /* Margem superior para separação */
+                }
+            
+                .modal-body p {
+                    font-size: 1.1rem; /* Ajuste para telas menores */
+                }
+            
+                .modal-body .result-value {
+                    font-size: 2.5rem; /* Aumenta o valor para ser mais visível */
+                }
+            
+                .modal-header h6 {
+                    font-size: 1.5rem; /* Aumenta o tamanho do título no modal */
+                }
+            
+                /* Gradientes de fundo para desempenho docente e respondentes */
+                .bg-gradient-docente {
+                    background: linear-gradient(45deg, #1de9b6, #1dc4e9); /* Ajuste conforme necessário */
+                }
+                
+                .bg-gradient-respondentes {
+                    background: linear-gradient(45deg, #03a9f4, #2196f3); /* Ajuste conforme necessário */
+                }
+            
+                /* Ajuste para exibir os itens verticalmente */
+                .d-flex {
+                    display: flex;
+                    flex-direction: column; /* Certifique-se de que os itens são exibidos verticalmente */
+                }
+            
+                .mb-3 {
+                    margin-bottom: 1rem; /* Ajuste o espaçamento conforme necessário */
+                }
+            }
+
+        </style>
+
+
+            <script>
+                
+                document.addEventListener("DOMContentLoaded", function() {
+                // Obtém o elemento de saudação
+                const greetingMessage = document.getElementById('greeting-message');
+            
+                // Define a mensagem de saudação com imagem do usuário
+                const userName = "<t t-esc="request.env.user.name"/>";
+ 
+                const userImageUrl = "/web/image/res.users/<t t-esc="request.env.user.id"/>/image_1920";
+            
+                // Atualiza o HTML com a imagem do perfil do usuário e o nome
+                greetingMessage.innerHTML = `
+                    <div class="d-flex align-items-center" style="background-color: #007bff; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px;">
+                        <img src="${userImageUrl}" alt="Imagem do perfil" class="img-fluid rounded-circle profile-image" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;"/>
+                        <div style="color: white; font-size: 1rem; font-weight: 600; white-space: nowrap;">Olá, ${userName}</div>
+                    </div>
+                `;
+            
+                // Adiciona um efeito de fade-in
+                greetingMessage.style.opacity = 0;
+                setTimeout(() =&gt; {
+                    greetingMessage.style.transition = "opacity 1.5s ease";
+                    greetingMessage.style.opacity = 1;
+                }, 100);
+            });
+         
+                // Função para formatar datas de YYYY-MM-DD para DD/MM/YYYY
+                function formatarData(data) {
+                    if (!data || data === '--') return '--';
+                    const [ano, mes, dia] = data.split('-');
+                    return `${dia}/${mes}/${ano}`;
+                }
+         
+         
+                document.addEventListener("DOMContentLoaded", function() {
+                console.log("DOM completamente carregado e analisado");
+                
+                const turmaDropdown = document.getElementById('cod-turma-dropdown');
+                const turmaDiscDropdown = document.getElementById('id-turma-disc-dropdown');
+                const disciplinaDropdown = document.getElementById('disciplina-visualizacao');
+                const eduInfoContainer = document.getElementById('edu_info_container');
+                const turmaPesquisasValue = document.getElementById('turma-pesquisas-value');
+                const turmaRespondidasValue = document.getElementById('turma-respondidas-value');
+                const turmaPercentualRespondidasValue = document.getElementById('turma-percentual-respondidas-value');
+                const unidade = document.getElementById('unidade-value');
+                const disciplinaInfo = document.getElementById('disciplina_info');
+                const disciplinaVisualizacao = document.getElementById('disciplina-visualizacao');
+                const disciplinaPesquisasValue = document.getElementById('disciplina-pesquisas-value');
+                const disciplinaRespondidasValue = document.getElementById('disciplina-respondidas-value');
+                const disciplinaPercentualRespondidasValue = document.getElementById('disciplina-percentual-respondidas-value');
+                const dtFinalValue = document.getElementById('turma-dt-final-value');
+                const dtInicialValue = document.getElementById('turma-dt-inicial-value'); 
+                const modalidadeValue = document.getElementById('turma-modalidade-value'); 
+                const disciplinaDtFinalValue = document.getElementById('disciplina-dt-final-value');
+                const disciplinaDtInicialValue = document.getElementById('disciplina-dt-inicial-value');
+                const respondentesProgressBar = document.getElementById('respondentes-progress-bar'); 
+                <!--const desempenhoProgressBar = document.getElementById('desempenho-progress-bar'); -->
+                const turmaData = <t t-raw="turma_data"/>;
+
+            
+                console.log("Dados da turma carregados:", turmaData);
+            
+                turmaDropdown.addEventListener('change', function() {
+                    const selectedTurma = this.value;
+                    console.log("Turma selecionada:", selectedTurma);
+                    
+                    turmaDiscDropdown.innerHTML = '<option value="">Selecione um ID de Turma</option>';
+                    turmaDiscDropdown.classList.add('select-disabled');
+                    
+                    if (selectedTurma &amp;&amp; turmaData[selectedTurma]) {
+                        turmaDiscDropdown.classList.remove('select-disabled');
+                        Object.keys(turmaData[selectedTurma]).forEach(idTurmaDisc =&gt; {
+                            const option = document.createElement('option');
+                            option.value = idTurmaDisc;
+                            option.text = idTurmaDisc;
+                            turmaDiscDropdown.appendChild(option);
+                        });
+                    }
+                });
+            
+                // Event listener for selecting ID de Turma        
+                turmaDiscDropdown.addEventListener('change', function() {
+                    const selectedTurma = turmaDropdown.value;
+                    const selectedIdTurmaDisc = this.value;
+                    console.log("ID de Turma selecionado:", selectedIdTurmaDisc);
+            
+                    if (selectedTurma &amp;&amp; selectedIdTurmaDisc &amp;&amp; turmaData[selectedTurma][selectedIdTurmaDisc]) {
+                        const data = turmaData[selectedTurma][selectedIdTurmaDisc];
+                        console.log("Dados da Turma Disciplina selecionada:", data);
+                        
+                        // Display dt_final, dt_inicial, modalidade, and periodo_letivo for Turma
+                        dtFinalValue.innerText = data.dt_final || '--';
+                        dtInicialValue.innerText = data.dt_inicial || '--'; // Atualização para data inicial
+                        modalidadeValue.innerText = data.modalidade || 'N/A'; // Atualização para modalidade
+                        unidade.innerText = data.unidade;
+                        turmaPesquisasValue.innerText = data.pesquisas;
+                        turmaRespondidasValue.innerText = data.respondidas;
+                        turmaPercentualRespondidasValue.innerText = data.percentual_respondidas;
+                        <!--updatePercentualColor(turmaPercentualRespondidasValue, parseFloat(data.percentual_respondidas));-->
+                        eduInfoContainer.classList.remove('d-none');
+
+            
+                        // Clear and hide disciplina info
+                        disciplinaPesquisasValue.innerText = '0';
+                        disciplinaRespondidasValue.innerText = '0';
+                        disciplinaPercentualRespondidasValue.innerText = '0%';
+                        disciplinaDtFinalValue.innerText = '--';
+                        disciplinaInfo.classList.add('d-none');
+                        
+                        disciplinaVisualizacao.value = Object.keys(data.disciplinas)[0];
+                        console.log("Disciplina selecionada inicialmente:", disciplinaVisualizacao.value);
+            
+                        // Atualizar barra de Respondentes
+                        calcularRespondentesPesquisa(selectedTurma, selectedIdTurmaDisc);
+        
+                    } else {
+                        resetarIndicadoresRespondentes();
+                        
+                    }
+                });
+
+               
+
+
+                // Função para calcular Respondentes da Pesquisa
+                function calcularRespondentesPesquisa(selectedTurma, selectedIdTurmaDisc) {
+                    const disciplinas = turmaData[selectedTurma][selectedIdTurmaDisc].disciplinas;
+                    let somaProdutos = 0;
+                    let somaPesquisas = 0;
+
+                    Object.values(disciplinas).forEach(disciplina =&gt; {
+                        const percentualRespondidas = parseFloat(disciplina.percentual_respondidas) / 100; // Converter para decimal
+                        const quantidadePesquisas = parseFloat(disciplina.pesquisas);
+
+                        const produto = percentualRespondidas * quantidadePesquisas;
+                        somaProdutos += produto;
+                        somaPesquisas += quantidadePesquisas;
+                    });
+
+                    // Evitar divisão por zero
+                    const respondentesPesquisa = somaPesquisas &gt; 0 ? (somaProdutos / somaPesquisas) * 100 : 0;
+                    console.log("Respondentes da Pesquisa Calculado:", respondentesPesquisa.toFixed(2) + "%");
+
+                    // Atualizar o DOM
+                    respondentesProgressBar.style.width = respondentesPesquisa + '%';
+                    respondentesProgressBar.innerText = respondentesPesquisa.toFixed(2) + '%';
+
+                    // Atualizar cores conforme o valor (opcional)
+                    <!--updatePercentualColor(respondentesProgressBar, respondentesPesquisa);-->
+                }
+                
+
+                // Função para resetar os indicadores de Respondentes da Pesquisa
+                function resetarIndicadoresRespondentes() {
+                    respondentesProgressBar.style.width = '0%';
+                    respondentesProgressBar.innerText = '0%';
+                }
+
+                <!--// Função existente para atualizar a cor da barra de progresso-->
+                <!--function updatePercentualColor(element, percentual) {-->
+                <!--    if (percentual &gt;= 80) {-->
+                <!--        element.classList.remove('bg-gradient-blue', 'bg-gradient-teal');-->
+                <!--        element.classList.add('bg-gradient-green');-->
+                <!--    } else if (percentual &gt;= 50) {-->
+                <!--        element.classList.remove('bg-gradient-blue', 'bg-gradient-green');-->
+                <!--        element.classList.add('bg-gradient-orange');-->
+                <!--    } else {-->
+                <!--        element.classList.remove('bg-gradient-orange', 'bg-gradient-green');-->
+                <!--        element.classList.add('bg-gradient-red');-->
+                <!--    }-->
+                <!--}-->
+
+        
+                // Trigger change event to show all records initially
+                console.log("Disparando o evento change inicialmente");
+                turmaDropdown.dispatchEvent(new Event('change'));
+            });
+        </script>
+    </t>
+</t>
